@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */; };
 		572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */; };
-		572C1FFF225EC4FE00F43F27 /* CadastroControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FFE225EC4FE00F43F27 /* CadastroControllerViewController.swift */; };
+		5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731B1AD2261474200B9F034 /* CadastroViewController.swift */; };
 		57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F02255683A00CBF820 /* AppDelegate.swift */; };
 		57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F22255683A00CBF820 /* ViewController.swift */; };
 		57D2F4F62255683A00CBF820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4F42255683A00CBF820 /* Main.storyboard */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroTableViewController.swift; sourceTree = "<group>"; };
 		572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetoresTableViewController.swift; sourceTree = "<group>"; };
-		572C1FFE225EC4FE00F43F27 /* CadastroControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroControllerViewController.swift; sourceTree = "<group>"; };
+		5731B1AD2261474200B9F034 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CapacitacaoIOS-Descarte.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D2F4F02255683A00CBF820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D2F4F22255683A00CBF820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +91,11 @@
 		57D2F5072255685C00CBF820 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5731B1AD2261474200B9F034 /* CadastroViewController.swift */,
 				57D2F4F02255683A00CBF820 /* AppDelegate.swift */,
 				57D2F4F22255683A00CBF820 /* ViewController.swift */,
 				572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */,
 				572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */,
-				572C1FFE225EC4FE00F43F27 /* CadastroControllerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */,
+				5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */,
 				572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */,
 				57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */,
-				572C1FFF225EC4FE00F43F27 /* CadastroControllerViewController.swift in Sources */,
 				57D2F4F92255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld in Sources */,
 				572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */,
 			);
