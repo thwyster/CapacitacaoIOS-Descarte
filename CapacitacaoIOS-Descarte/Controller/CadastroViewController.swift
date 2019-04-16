@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class CadastroViewController: UIViewController {
 
     @IBOutlet weak var containerViewColetor: UIView!
-    @IBOutlet weak var containerViewUsuario: UIView!
+    @IBOutlet weak var containerViewUsuario: UIView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()

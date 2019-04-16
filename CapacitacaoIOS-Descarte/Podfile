@@ -4,5 +4,8 @@ target 'CapacitacaoIOS-Descarte' do
 
 # Pods for CapacitacaoIOS-Descarte
 
+pod ‘Firebase/Core’
+pod ‘Firebase/Database’
+pod ‘Firebase/Auth’
 
 end

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>117978544697-15aiagfgu5o8o1tlhpqusbjhfbub6gfh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.117978544697-15aiagfgu5o8o1tlhpqusbjhfbub6gfh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD2b7FPwYklrtm1EK3x2tANRuyebZ3RqgQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>117978544697</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>PUC.CapacitacaoIOS-Descarte</string>
+	<key>PROJECT_ID</key>
+	<string>capacitacaoios-descarte</string>
+	<key>STORAGE_BUCKET</key>
+	<string>capacitacaoios-descarte.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:117978544697:ios:6aec8b8e7d2c59dd</string>
+	<key>DATABASE_URL</key>
+	<string>https://capacitacaoios-descarte.firebaseio.com</string>
+</dict>
+</plist>

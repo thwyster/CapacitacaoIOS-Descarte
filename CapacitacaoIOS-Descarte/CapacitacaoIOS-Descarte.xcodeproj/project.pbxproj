@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571920CB22655AA5000832A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 571920CA22655AA4000832A8 /* GoogleService-Info.plist */; };
 		572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */; };
 		572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */; };
 		5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731B1AD2261474200B9F034 /* CadastroViewController.swift */; };
@@ -16,9 +17,13 @@
 		57D2F4F92255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F72255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld */; };
 		57D2F4FB2255683C00CBF820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4FA2255683C00CBF820 /* Assets.xcassets */; };
 		57D2F4FE2255683C00CBF820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4FC2255683C00CBF820 /* LaunchScreen.storyboard */; };
+		BC9E3FB2D4638657ECE7B44C /* libPods-CapacitacaoIOS-Descarte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E97704CEA7483AE7478256F /* libPods-CapacitacaoIOS-Descarte.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C82E7ED2DF395C42D621CA0 /* Pods-CapacitacaoIOS-Descarte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapacitacaoIOS-Descarte.release.xcconfig"; path = "Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte.release.xcconfig"; sourceTree = "<group>"; };
+		2E97704CEA7483AE7478256F /* libPods-CapacitacaoIOS-Descarte.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CapacitacaoIOS-Descarte.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		571920CA22655AA4000832A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroTableViewController.swift; sourceTree = "<group>"; };
 		572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetoresTableViewController.swift; sourceTree = "<group>"; };
 		5731B1AD2261474200B9F034 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		57D2F4FA2255683C00CBF820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D2F4FD2255683C00CBF820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D2F4FF2255683C00CBF820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F371FB2C2A303E0F65488A6 /* Pods-CapacitacaoIOS-Descarte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapacitacaoIOS-Descarte.debug.xcconfig"; path = "Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9E3FB2D4638657ECE7B44C /* libPods-CapacitacaoIOS-Descarte.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +58,8 @@
 				57D2F5062255685700CBF820 /* View */,
 				57D2F5072255685C00CBF820 /* Controller */,
 				57D2F4EE2255683A00CBF820 /* Products */,
-				57D2F4FA2255683C00CBF820 /* Assets.xcassets */,
+				E2CA73141B0ED4E1DAE1AC3F /* Pods */,
+				8DC6205FD8251AA6BCAFE734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +74,9 @@
 		57D2F4EF2255683A00CBF820 /* CapacitacaoIOS-Descarte */ = {
 			isa = PBXGroup;
 			children = (
+				57D2F4FA2255683C00CBF820 /* Assets.xcassets */,
+				571920CA22655AA4000832A8 /* GoogleService-Info.plist */,
+				57D2F4F02255683A00CBF820 /* AppDelegate.swift */,
 				57D2F4FF2255683C00CBF820 /* Info.plist */,
 			);
 			path = "CapacitacaoIOS-Descarte";
@@ -92,12 +103,28 @@
 			isa = PBXGroup;
 			children = (
 				5731B1AD2261474200B9F034 /* CadastroViewController.swift */,
-				57D2F4F02255683A00CBF820 /* AppDelegate.swift */,
 				57D2F4F22255683A00CBF820 /* ViewController.swift */,
 				572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */,
 				572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DC6205FD8251AA6BCAFE734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E97704CEA7483AE7478256F /* libPods-CapacitacaoIOS-Descarte.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2CA73141B0ED4E1DAE1AC3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F371FB2C2A303E0F65488A6 /* Pods-CapacitacaoIOS-Descarte.debug.xcconfig */,
+				1C82E7ED2DF395C42D621CA0 /* Pods-CapacitacaoIOS-Descarte.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57D2F5022255683C00CBF820 /* Build configuration list for PBXNativeTarget "CapacitacaoIOS-Descarte" */;
 			buildPhases = (
+				5BEBA7E634AF467927E6F186 /* [CP] Check Pods Manifest.lock */,
 				57D2F4E92255683A00CBF820 /* Sources */,
 				57D2F4EA2255683A00CBF820 /* Frameworks */,
 				57D2F4EB2255683A00CBF820 /* Resources */,
@@ -159,12 +187,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D2F4FE2255683C00CBF820 /* LaunchScreen.storyboard in Resources */,
+				571920CB22655AA5000832A8 /* GoogleService-Info.plist in Resources */,
 				57D2F4FB2255683C00CBF820 /* Assets.xcassets in Resources */,
 				57D2F4F62255683A00CBF820 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BEBA7E634AF467927E6F186 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CapacitacaoIOS-Descarte-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57D2F4E92255683A00CBF820 /* Sources */ = {
@@ -320,6 +374,7 @@
 		};
 		57D2F5032255683C00CBF820 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F371FB2C2A303E0F65488A6 /* Pods-CapacitacaoIOS-Descarte.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +392,7 @@
 		};
 		57D2F5042255683C00CBF820 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C82E7ED2DF395C42D621CA0 /* Pods-CapacitacaoIOS-Descarte.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
