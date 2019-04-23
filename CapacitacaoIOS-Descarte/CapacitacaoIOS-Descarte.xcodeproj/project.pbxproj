@@ -11,6 +11,7 @@
 		572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */; };
 		572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */; };
 		5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731B1AD2261474200B9F034 /* CadastroViewController.swift */; };
+		578C4F0F226E7D4E00E14CB4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C4F0E226E7D4E00E14CB4 /* LoginViewController.swift */; };
 		57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F02255683A00CBF820 /* AppDelegate.swift */; };
 		57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F22255683A00CBF820 /* ViewController.swift */; };
 		57D2F4F62255683A00CBF820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4F42255683A00CBF820 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroTableViewController.swift; sourceTree = "<group>"; };
 		572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetoresTableViewController.swift; sourceTree = "<group>"; };
 		5731B1AD2261474200B9F034 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		578C4F0E226E7D4E00E14CB4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CapacitacaoIOS-Descarte.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D2F4F02255683A00CBF820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D2F4F22255683A00CBF820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				57D2F4F22255683A00CBF820 /* ViewController.swift */,
 				572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */,
 				572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */,
+				578C4F0E226E7D4E00E14CB4 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 				57D2F4E92255683A00CBF820 /* Sources */,
 				57D2F4EA2255683A00CBF820 /* Frameworks */,
 				57D2F4EB2255683A00CBF820 /* Resources */,
+				CC6389F2DCCF2438652D50D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +222,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC6389F2DCCF2438652D50D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -225,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578C4F0F226E7D4E00E14CB4 /* LoginViewController.swift in Sources */,
 				57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */,
 				5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */,
 				572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */,

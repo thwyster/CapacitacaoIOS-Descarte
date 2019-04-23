@@ -11,8 +11,22 @@ import Firebase
 
 class CadastroViewController: UIViewController {
 
+    //Variaveis dos Containers
     @IBOutlet weak var containerViewColetor: UIView!
-    @IBOutlet weak var containerViewUsuario: UIView!    
+    @IBOutlet weak var containerViewUsuario: UIView!
+    
+    let db = Firestore.firestore()
+    
+    //Dados Usuario
+    //    @IBOutlet weak var txtNomeUsuario: UITextField!
+    //    @IBOutlet weak var txtCPFUsuario: UITextField!
+    //    @IBOutlet weak var txtCEPUsuario: UITextField!
+    
+    //Dados Coletor
+    //@IBOutlet weak var txtNomeColetor: UITextField!
+    //@IBOutlet weak var txtCPFCNPJColetor: UITextField!
+    //@IBOutlet weak var txtCEPColetor: UITextField!
+    //@IBOutlet weak var txtTelefoneColetor: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +34,19 @@ class CadastroViewController: UIViewController {
         self.containerViewUsuario.alpha = 1
 
         self.containerViewColetor.alpha = 0
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "first": "Ada",
+            "last": "Lovelace",
+            "born": 1815
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
         
     }
     
