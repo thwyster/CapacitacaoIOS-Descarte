@@ -20,11 +20,11 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                print("LOGIN EFETUADO COM SUCESSO")
+                print("LOGIN DEU BOA")
             }
         }
         else {
-            print("SENHAS DIFERENTES!!!")
+            print("LOGIN DEU RUIM!!!")
         }
     }
 }

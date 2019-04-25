@@ -15,12 +15,13 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var containerViewColetor: UIView!
     @IBOutlet weak var containerViewUsuario: UIView!
     
+    //TODO - Criar um singleton pra esse db aqui!
     let db = Firestore.firestore()
     
     //Dados Usuario
-    //    @IBOutlet weak var txtNomeUsuario: UITextField!
-    //    @IBOutlet weak var txtCPFUsuario: UITextField!
-    //    @IBOutlet weak var txtCEPUsuario: UITextField!
+    //@IBOutlet weak var txtNomeUsuario: UITextField!
+    //@IBOutlet weak var txtCPFUsuario: UITextField!
+    //@IBOutlet weak var txtCEPUsuario: UITextField!
     
     //Dados Coletor
     //@IBOutlet weak var txtNomeColetor: UITextField!
@@ -35,6 +36,8 @@ class CadastroViewController: UIViewController {
 
         self.containerViewColetor.alpha = 0
         
+        //TESTE
+        //Adicionar Colecao no DB
         var ref: DocumentReference? = nil
         ref = db.collection("users").addDocument(data: [
             "first": "Ada",
@@ -47,7 +50,6 @@ class CadastroViewController: UIViewController {
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
-        
     }
     
     @IBAction func showComponent(_ sender: UISegmentedControl) {
