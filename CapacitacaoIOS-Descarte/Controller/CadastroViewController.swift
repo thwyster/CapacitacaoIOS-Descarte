@@ -36,20 +36,6 @@ class CadastroViewController: UIViewController {
 
         self.containerViewColetor.alpha = 0
         
-        //TESTE
-        //Adicionar Colecao no DB
-        var ref: DocumentReference? = nil
-        ref = db.collection("users").addDocument(data: [
-            "first": "Ada",
-            "last": "Lovelace",
-            "born": 1815
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
     }
     
     @IBAction func showComponent(_ sender: UISegmentedControl) {

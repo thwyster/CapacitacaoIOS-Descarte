@@ -505,8 +505,11 @@
                         <viewLayoutGuide key="safeArea" id="0gF-wp-G2A"/>
                     </view>
                     <connections>
+                        <outlet property="txtCEP" destination="dXW-MK-xOb" id="QK0-zU-kK7"/>
+                        <outlet property="txtCPF" destination="Hvv-0B-GWi" id="dob-fC-Mk8"/>
                         <outlet property="txtConfirmacaoSenha" destination="AV4-pI-5io" id="BEx-2H-eKr"/>
                         <outlet property="txtEmail" destination="3nF-na-mnj" id="Fmz-VG-ZJZ"/>
+                        <outlet property="txtNome" destination="CWa-0w-z5x" id="Tv7-Fw-wb6"/>
                         <outlet property="txtSenha" destination="Zdp-Da-F2q" id="Zf5-ze-ELY"/>
                     </connections>
                 </viewController>
