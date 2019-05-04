@@ -1,24 +1,31 @@
-//
-//  ViewController.swift
-//  CapacitacaoIOS-Descarte
-//
-//  Created by ALUNO on 03/04/19.
-//  Copyright © 2019 Aluno. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtSenha: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
     
-    
-
-
+    @IBAction func btnEntrar(_ sender: Any) {
+        Auth.auth().signIn(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
+            
+            guard let user = result?.user
+                else {
+                    print(error!)
+                    return
+            }
+            
+            print("LOG - LOGIN EFETUADO COM SUCESSO")
+            
+            self.performSegue(withIdentifier: "segueFiltros", sender: nil)
+            
+        }
+    }
 }
 

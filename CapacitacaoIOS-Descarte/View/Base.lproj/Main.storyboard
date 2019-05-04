@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF / CNPJ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07I-0I-Imv">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07I-0I-Imv">
                                 <rect key="frame" x="93" y="303" width="228" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -44,7 +44,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
-                                    <segue destination="zJ4-KP-mA5" kind="show" id="6q6-Ex-XbQ"/>
+                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ki1-MO-I2e"/>
+                                    <segue destination="zJ4-KP-mA5" kind="show" id="YwJ-cn-Y73"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEk-RM-zVD">
@@ -73,6 +74,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="U39-hg-l2o"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="07I-0I-Imv" id="8y1-bK-vav"/>
+                        <outlet property="txtSenha" destination="kma-By-cON" id="mit-sT-QSm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

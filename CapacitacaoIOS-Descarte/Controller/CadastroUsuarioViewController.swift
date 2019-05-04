@@ -26,11 +26,8 @@ class CadastroUsuarioViewController: UIViewController {
     @IBAction func btnSalvar(_ sender: Any) {
         if (ValidaCamposPreenchidos()) {
             if (ValidaSenha()) {
-                CriarUsuario()
+                CriarLogin()
             }
-        }
-        else {
-            print("PREENCHA TODOS OS CAMPOS")
         }
     }
     
@@ -46,6 +43,7 @@ class CadastroUsuarioViewController: UIViewController {
             return true
         }
         else {
+            print("PREENCHA TODOS OS CAMPOS")
             return false
         }
     }
@@ -59,30 +57,8 @@ class CadastroUsuarioViewController: UIViewController {
         }
     }
     
-    func CadastrarUsuarioCompleto(_ idUsuario: String) -> Bool {
-        let db = Firestore.firestore()
-        var usuarioCadastrado = false;
+    func CriarLogin() {
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("usuario").addDocument(data: [
-            "Nome": txtNome.text!,
-            "CPF": txtCPF.text!,
-            "CEP": txtCEP.text!,
-            "idUsuario": idUsuario
-        ]) { error in
-            if let error = error {
-                print("LOG - ERRO AO CADASTRAR USUARIO: \(error)")
-                usuarioCadastrado = false
-            } else {
-                print("LOG - USUARIO CADASTRADO COM SUCESSO: \(ref!.documentID)")
-                usuarioCadastrado = true
-            }
-        }
-        
-        return usuarioCadastrado
-    }
-    
-    func CriarUsuario() {
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
             guard let user = result?.user
                 else
@@ -92,11 +68,33 @@ class CadastroUsuarioViewController: UIViewController {
                 return
             }
             
-            //Caso o cadastro da Colecao Usuario de errado já rodo o usuario cadastrado.
+            //Caso o cadastro da Colecao Usuario de errado já exclui o usuario cadastrado.
             if !self.CadastrarUsuarioCompleto(user.uid) {
                 self.ExcluirUsuario()
             }
         }
+    }
+    
+    func CadastrarUsuarioCompleto(_ idUsuario: String) -> Bool {
+        let db = Firestore.firestore()
+        var usuarioCadastrado = true;
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("usuario").addDocument(data: [
+            "Nome": txtNome.text!,
+            "CPF": txtCPF.text!,
+            "CEP": txtCEP.text!,
+            "idUsuario": idUsuario
+        ]) { err in
+            if let err = err {
+                print("LOG - ERRO AO CADASTRAR USUARIO: \(err)")
+                usuarioCadastrado = false
+            } else {
+                print("LOG - USUARIO CADASTRADO COM SUCESSO: \(ref!.documentID)")
+            }
+        }
+    
+        return usuarioCadastrado
     }
     
     func ExcluirUsuario() {
