@@ -9,31 +9,154 @@
 import UIKit
 import Firebase
 
-class CadastroColetorViewController: UIViewController {
+class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //Variaveis de Tela
+    @IBOutlet weak var txtNome: UITextField!
+    @IBOutlet weak var txtCPFCNPJ: UITextField!
+    @IBOutlet weak var txtCEP: UITextField!
+    @IBOutlet weak var txtTelefone: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var txtConfirmacaoSenha: UITextField!
+    @IBOutlet weak var tvTiposDescarte: UITableView!
+    var listaIDSTiposDescarte = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CarregarTiposDescarte()
     }
 
     @IBAction func btnSalvar(_ sender: Any) {
-        if (txtSenha.text! == txtConfirmacaoSenha.text!) {
-            Auth.auth().createUser(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
-                guard (result?.user) != nil
-                    else
-                {
-                    print(error!)
-                    return
-                }
-                
-                print("LOGIN DEU BOA")
+        if (ValidaCamposPreenchidos()) {
+            if (ValidaSenha()) {
+                CriarLogin()
             }
         }
+    }
+    
+    //TODO - FUNCOES UTEIS, JOGAR ELAS PRA UMA BASE DEPOIS
+    func ValidaCamposPreenchidos() -> Bool {
+        if (txtNome.text != ""
+            && txtCPFCNPJ.text != ""
+            && txtCEP.text != ""
+            && txtEmail.text != ""
+            && txtSenha.text != ""
+            && txtConfirmacaoSenha.text != "")
+        {
+            return true
+        }
         else {
-            print("LOGIN DEU RUIM!!!")
+            print("PREENCHA TODOS OS CAMPOS")
+            return false
+        }
+    }
+    
+    func ValidaSenha() -> Bool {
+        if (txtSenha.text! == txtConfirmacaoSenha.text!) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func CriarLogin() {
+        
+        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
+            guard let user = result?.user
+                else
+            {
+                print("LOG - LOGIN DEU RUIM")
+                print(error!)
+                return
+            }
+            
+            //Caso o cadastro da Colecao Usuario de errado já exclui o usuario cadastrado.
+            if !self.CadastrarUsuarioCompleto(user.uid) {
+                self.ExcluirUsuario()
+            }
+        }
+    }
+    
+    func CadastrarUsuarioCompleto(_ idUsuario: String) -> Bool {
+        let db = Firestore.firestore()
+        var usuarioCadastrado = true;
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("coletor").addDocument(data: [
+            "Nome": txtNome.text!,
+            "CPFCNPJ": txtCPFCNPJ.text!,
+            "CEP": txtCEP.text!,
+            "Telefone": txtTelefone.text!,
+            "idUsuario": idUsuario
+        ]) { err in
+            if let err = err {
+                print("LOG - ERRO AO CADASTRAR COLETOR: \(err)")
+                usuarioCadastrado = false
+            } else {
+                print("LOG - COLETOR CADASTRADO COM SUCESSO: \(ref!.documentID)")
+                self.performSegue(withIdentifier: "segueParaLoginColetor", sender: nil)
+            }
+        }
+        
+        return usuarioCadastrado
+    }
+    
+    func ExcluirUsuario() {
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                print("LOG - ERRO AO EXCLUIR COLETOR: \(error)")
+            } else {
+                print("LOG - COLETOR EXCLUIDO COM SUCESSO")
+            }
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listaIDSTiposDescarte.count // your number of cell here
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tvTiposDescarte.dequeueReusableCell(withIdentifier: "Descricao", for: indexPath)
+        cell.textLabel?.text = listaIDSTiposDescarte.description
+
+        return cell
+    }
+    
+//    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+//        // cell selected code here
+//    }
+    
+    func CarregarTiposDescarte(){
+        let db = Firestore.firestore()
+        tvTiposDescarte.dataSource = self
+        tvTiposDescarte.delegate = self
+        
+        db.collection("tiposDescarte").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("LOG - ERRO AO CARREGAR TIPOS DESCARTE: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let data = document.data()
+                    data.forEach { (item) in
+//                        let idTipoDescarte = data.
+                        let descricao = data["Descricao"] as? String
+                        
+                        self.listaIDSTiposDescarte.append(descricao!)
+//                        self.listaIDSTiposDescarte.append(idTipoDescarte!)
+                        
+                    }
+                }
+            }
         }
     }
 }
+

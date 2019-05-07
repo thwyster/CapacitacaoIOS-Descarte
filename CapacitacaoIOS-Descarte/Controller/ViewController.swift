@@ -15,15 +15,15 @@ class ViewController: UIViewController {
     @IBAction func btnEntrar(_ sender: Any) {
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
             
-            guard let user = result?.user
+            guard (result?.user) != nil
                 else {
-                    print(error!)
+                    print("LOG - LOGIN DEU RUIM:  \(error!)")
                     return
             }
             
             print("LOG - LOGIN EFETUADO COM SUCESSO")
             
-            self.performSegue(withIdentifier: "segueFiltros", sender: nil)
+            self.performSegue(withIdentifier: "segueParaFiltros", sender: nil)
             
         }
     }

@@ -91,6 +91,7 @@ class CadastroUsuarioViewController: UIViewController {
                 usuarioCadastrado = false
             } else {
                 print("LOG - USUARIO CADASTRADO COM SUCESSO: \(ref!.documentID)")
+                self.performSegue(withIdentifier: "segueParaLoginUsuario", sender: nil)
             }
         }
     

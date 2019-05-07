@@ -39,15 +39,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0St-DK-8nS">
-                                <rect key="frame" x="130" y="404" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Entrar"/>
-                                <connections>
-                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ki1-MO-I2e"/>
-                                    <segue destination="zJ4-KP-mA5" kind="show" id="YwJ-cn-Y73"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEk-RM-zVD">
                                 <rect key="frame" x="20" y="686" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,17 +47,20 @@
                                     <segue destination="r55-bm-qkW" kind="show" id="IWm-ej-v7U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzB-Zi-iQd">
-                                <rect key="frame" x="228" y="404" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Facebook"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcZ-lG-Hrr">
                                 <rect key="frame" x="352" y="685" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sobre"/>
                                 <connections>
                                     <segue destination="Kej-Yw-xgj" kind="show" id="ahK-do-QHf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0St-DK-8nS">
+                                <rect key="frame" x="186" y="402" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Entrar"/>
+                                <connections>
+                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ki1-MO-I2e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,6 +71,7 @@
                     <connections>
                         <outlet property="txtEmail" destination="07I-0I-Imv" id="8y1-bK-vav"/>
                         <outlet property="txtSenha" destination="kma-By-cON" id="mit-sT-QSm"/>
+                        <segue destination="zJ4-KP-mA5" kind="show" identifier="segueParaFiltros" id="ntv-h0-hDz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -438,9 +433,15 @@
                         <viewLayoutGuide key="safeArea" id="5H5-8Q-Max"/>
                     </view>
                     <connections>
+                        <outlet property="tvTiposDescarte" destination="IrB-o8-pot" id="Wwi-Eo-hzq"/>
+                        <outlet property="txtCEP" destination="ruh-bs-Ps9" id="h1n-aJ-I3W"/>
+                        <outlet property="txtCPFCNPJ" destination="B3o-VQ-Tu8" id="qBZ-dD-gWv"/>
                         <outlet property="txtConfirmacaoSenha" destination="j6f-Oh-E4z" id="unC-E9-031"/>
                         <outlet property="txtEmail" destination="iSL-hj-LqP" id="w2m-qJ-iT9"/>
+                        <outlet property="txtNome" destination="fGP-Qf-CqO" id="nug-57-0kG"/>
                         <outlet property="txtSenha" destination="Duz-uq-9HR" id="Qg4-Sm-MIl"/>
+                        <outlet property="txtTelefone" destination="TDp-hg-jAd" id="Ze6-gz-Akm"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueParaLoginColetor" id="gll-n0-NYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lck-6O-fst" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -516,6 +517,7 @@
                         <outlet property="txtEmail" destination="3nF-na-mnj" id="Fmz-VG-ZJZ"/>
                         <outlet property="txtNome" destination="CWa-0w-z5x" id="Tv7-Fw-wb6"/>
                         <outlet property="txtSenha" destination="Zdp-Da-F2q" id="Zf5-ze-ELY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueParaLoginUsuario" id="4hG-CQ-fu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhN-dN-xPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -523,4 +525,7 @@
             <point key="canvasLocation" x="2078" y="530"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gll-n0-NYX"/>
+    </inferredMetricsTieBreakers>
 </document>
