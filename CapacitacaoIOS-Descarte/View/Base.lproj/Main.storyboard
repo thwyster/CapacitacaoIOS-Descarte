@@ -420,6 +420,16 @@
                                 <rect key="frame" x="34" y="347" width="311" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemDescarte" id="e8h-0b-7qS">
+                                        <rect key="frame" x="0.0" y="28" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e8h-0b-7qS" id="to6-QK-8Pb">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O que você coleta ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcr-Pl-KfS">
                                 <rect key="frame" x="110" y="318" width="159" height="21"/>
@@ -433,7 +443,7 @@
                         <viewLayoutGuide key="safeArea" id="5H5-8Q-Max"/>
                     </view>
                     <connections>
-                        <outlet property="tvTiposDescarte" destination="IrB-o8-pot" id="Wwi-Eo-hzq"/>
+                        <outlet property="tvTiposDescarte" destination="IrB-o8-pot" id="Pxu-nL-EuR"/>
                         <outlet property="txtCEP" destination="ruh-bs-Ps9" id="h1n-aJ-I3W"/>
                         <outlet property="txtCPFCNPJ" destination="B3o-VQ-Tu8" id="qBZ-dD-gWv"/>
                         <outlet property="txtConfirmacaoSenha" destination="j6f-Oh-E4z" id="unC-E9-031"/>

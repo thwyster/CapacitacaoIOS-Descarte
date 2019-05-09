@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57106B2122839B8700BA4497 /* TipoDescarteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57106B2022839B8700BA4497 /* TipoDescarteModel.swift */; };
 		571920CB22655AA5000832A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 571920CA22655AA4000832A8 /* GoogleService-Info.plist */; };
 		572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */; };
 		572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1C82E7ED2DF395C42D621CA0 /* Pods-CapacitacaoIOS-Descarte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapacitacaoIOS-Descarte.release.xcconfig"; path = "Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte.release.xcconfig"; sourceTree = "<group>"; };
 		2E97704CEA7483AE7478256F /* libPods-CapacitacaoIOS-Descarte.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CapacitacaoIOS-Descarte.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57106B2022839B8700BA4497 /* TipoDescarteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoDescarteModel.swift; sourceTree = "<group>"; };
 		571920CA22655AA4000832A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroTableViewController.swift; sourceTree = "<group>"; };
 		572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetoresTableViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				57D2F4F72255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld */,
+				57106B2022839B8700BA4497 /* TipoDescarteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */,
 				5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */,
 				572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */,
+				57106B2122839B8700BA4497 /* TipoDescarteModel.swift in Sources */,
 				57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */,
 				57D2F4F92255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld in Sources */,
 				57A8329E227137E30011F5A6 /* CadastroUsuarioViewController.swift in Sources */,

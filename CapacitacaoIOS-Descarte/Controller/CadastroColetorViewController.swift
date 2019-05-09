@@ -20,11 +20,14 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var txtConfirmacaoSenha: UITextField!
     @IBOutlet weak var tvTiposDescarte: UITableView!
-    var listaIDSTiposDescarte = [String]()
+    var listaTiposDescarte = [TipoDescarteModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CarregarTiposDescarte()
+//        tvTiposDescarte.dataSource = self
+//        tvTiposDescarte.delegate = self
     }
 
     @IBAction func btnSalvar(_ sender: Any) {
@@ -120,43 +123,43 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaIDSTiposDescarte.count // your number of cell here
+        return listaTiposDescarte.count // your number of cell here
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tvTiposDescarte.dequeueReusableCell(withIdentifier: "Descricao", for: indexPath)
-        cell.textLabel?.text = listaIDSTiposDescarte.description
+        let cell = tvTiposDescarte.dequeueReusableCell(withIdentifier: "ItemDescarte", for: indexPath)
+        let item = listaTiposDescarte[indexPath.row]
+        cell.textLabel?.text = item.Descricao
+        //cell.accessoryType = .checkmark
 
         return cell
     }
     
-//    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-//        // cell selected code here
-//    }
-    
     func CarregarTiposDescarte(){
         let db = Firestore.firestore()
-        tvTiposDescarte.dataSource = self
-        tvTiposDescarte.delegate = self
         
         db.collection("tiposDescarte").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("LOG - ERRO AO CARREGAR TIPOS DESCARTE: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    let tipoDescarte = TipoDescarteModel()
+                    tipoDescarte.idTipoDescarte = document.documentID
+                    tipoDescarte.Descricao = document.data()["Descricao"] as! String
                     
-                    let data = document.data()
-                    data.forEach { (item) in
-//                        let idTipoDescarte = data.
-                        let descricao = data["Descricao"] as? String
-                        
-                        self.listaIDSTiposDescarte.append(descricao!)
-//                        self.listaIDSTiposDescarte.append(idTipoDescarte!)
-                        
-                    }
+                    self.listaTiposDescarte.append(tipoDescarte)
                 }
             }
+            
+            self.tvTiposDescarte.dataSource = self.listaTiposDescarte as? UITableViewDataSource
+            self.tvTiposDescarte.reloadData()
+            
+            self.tvTiposDescarte.dataSource = self
+            self.tvTiposDescarte.delegate = self
+            self.tvTiposDescarte.allowsMultipleSelection = true
         }
     }
 }
+
+//tvTiposDescarte.indexPathsForSelectedRows //serve para pegar todas as linhas selecionadas
 
