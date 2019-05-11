@@ -20,7 +20,10 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var txtConfirmacaoSenha: UITextField!
     @IBOutlet weak var tvTiposDescarte: UITableView!
+    
     var listaTiposDescarte = [TipoDescarteModel]()
+    
+    
     
     
     override func viewDidLoad() {
@@ -31,11 +34,12 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     @IBAction func btnSalvar(_ sender: Any) {
-        if (ValidaCamposPreenchidos()) {
-            if (ValidaSenha()) {
-                CriarLogin()
-            }
-        }
+        VinculaListaTiposDescarte()
+        //        if (ValidaCamposPreenchidos()) {
+//            if (ValidaSenha()) {
+//                CriarLogin()
+//            }
+//        }
     }
     
     //TODO - FUNCOES UTEIS, JOGAR ELAS PRA UMA BASE DEPOIS
@@ -129,11 +133,36 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tvTiposDescarte.dequeueReusableCell(withIdentifier: "ItemDescarte", for: indexPath)
         let item = listaTiposDescarte[indexPath.row]
+        
         cell.textLabel?.text = item.Descricao
-        //cell.accessoryType = .checkmark
-
+        cell.selectionStyle = .blue 
+        
+        
+        //Verificar a cell para trazer ela marcada
+        //        if (true){
+        //            cell.accessoryType = .checkmark
+        //            tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition.bottom)
+        //        } else {
+        //            cell.accessoryType = .none
+        //        }
+        
         return cell
     }
+
+    //Desenha os checkmark mas da BUG!
+    //    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    //        if let cell = tableView.cellForRow(at: indexPath) {
+    //            cell.accessoryType = .none
+    //
+    //        }
+    //    }
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        if let cell = tableView.cellForRow(at: indexPath) {
+    //            cell.accessoryType = .checkmark
+    //
+    //
+    //        }
+    //    }
     
     func CarregarTiposDescarte(){
         let db = Firestore.firestore()
@@ -158,6 +187,18 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
             self.tvTiposDescarte.delegate = self
             self.tvTiposDescarte.allowsMultipleSelection = true
         }
+    }
+    
+    func VinculaListaTiposDescarte(){
+        let lista = tvTiposDescarte.indexPathsForSelectedRows
+        
+
+            print(lista)
+        
+        
+        
+        
+        
     }
 }
 
