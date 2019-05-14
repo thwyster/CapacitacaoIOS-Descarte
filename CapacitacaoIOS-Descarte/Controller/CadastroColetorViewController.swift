@@ -34,12 +34,11 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     @IBAction func btnSalvar(_ sender: Any) {
-        VinculaListaTiposDescarte()
-        //        if (ValidaCamposPreenchidos()) {
-//            if (ValidaSenha()) {
-//                CriarLogin()
-//            }
-//        }
+        if (ValidaCamposPreenchidos()) {
+            if (ValidaSenha()) {
+                CriarLogin()
+            }
+        }
     }
     
     //TODO - FUNCOES UTEIS, JOGAR ELAS PRA UMA BASE DEPOIS
@@ -71,7 +70,7 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
     func CriarLogin() {
         
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
-            guard let user = result?.user
+            guard (result?.user) != nil
                 else
             {
                 print("LOG - LOGIN DEU RUIM")
@@ -80,29 +79,28 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
             }
             
             //Caso o cadastro da Colecao Usuario de errado já exclui o usuario cadastrado.
-            if !self.CadastrarUsuarioCompleto(user.uid) {
+            if !self.CadastrarUsuarioCompleto() {
                 self.ExcluirUsuario()
             }
         }
     }
     
-    func CadastrarUsuarioCompleto(_ idUsuario: String) -> Bool {
+    func CadastrarUsuarioCompleto() -> Bool {
         let db = Firestore.firestore()
         var usuarioCadastrado = true;
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("coletor").addDocument(data: [
+    
+        db.collection("coletor").document((Auth.auth().currentUser?.uid)!).setData([
             "Nome": txtNome.text!,
             "CPFCNPJ": txtCPFCNPJ.text!,
             "CEP": txtCEP.text!,
             "Telefone": txtTelefone.text!,
-            "idUsuario": idUsuario
+            "ListaTiposDescarte": VinculaListaTiposDescarteAoColetor()
         ]) { err in
             if let err = err {
                 print("LOG - ERRO AO CADASTRAR COLETOR: \(err)")
                 usuarioCadastrado = false
             } else {
-                print("LOG - COLETOR CADASTRADO COM SUCESSO: \(ref!.documentID)")
+                print("LOG - COLETOR CADASTRADO COM SUCESSO")
                 self.performSegue(withIdentifier: "segueParaLoginColetor", sender: nil)
             }
         }
@@ -189,16 +187,16 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
     
-    func VinculaListaTiposDescarte(){
+    func VinculaListaTiposDescarteAoColetor() -> [String]{
+        //Seleciona as linhas selecioinadas da Tableview
         let lista = tvTiposDescarte.indexPathsForSelectedRows
+        var listaIds : [String] = []
         
-
-            print(lista)
+        for l in lista! {
+            listaIds.append(listaTiposDescarte[l.row].idTipoDescarte)
+        }
         
-        
-        
-        
-        
+        return listaIds
     }
 }
 

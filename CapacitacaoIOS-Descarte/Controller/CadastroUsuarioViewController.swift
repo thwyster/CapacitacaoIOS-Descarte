@@ -1,11 +1,3 @@
-//
-//  CadastroUsuarioViewController.swift
-//  CapacitacaoIOS-Descarte
-//
-//  Created by ALUNO on 24/04/19.
-//  Copyright © 2019 Aluno. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -60,7 +52,7 @@ class CadastroUsuarioViewController: UIViewController {
     func CriarLogin() {
         
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtSenha.text!) { (result, error) in
-            guard let user = result?.user
+            guard (result?.user) != nil
                 else
             {
                 print("LOG - LOGIN DEU RUIM")
@@ -69,32 +61,30 @@ class CadastroUsuarioViewController: UIViewController {
             }
             
             //Caso o cadastro da Colecao Usuario de errado já exclui o usuario cadastrado.
-            if !self.CadastrarUsuarioCompleto(user.uid) {
+            if !self.CadastrarUsuarioCompleto() {
                 self.ExcluirUsuario()
             }
         }
     }
     
-    func CadastrarUsuarioCompleto(_ idUsuario: String) -> Bool {
+    func CadastrarUsuarioCompleto() -> Bool {
         let db = Firestore.firestore()
         var usuarioCadastrado = true;
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("usuario").addDocument(data: [
+        db.collection("cities").document((Auth.auth().currentUser?.uid)!).setData([
             "Nome": txtNome.text!,
             "CPF": txtCPF.text!,
             "CEP": txtCEP.text!,
-            "idUsuario": idUsuario
-        ]) { err in
+            "idUsuario": Auth.auth().currentUser?.uid as Any
+        ]){ err in
             if let err = err {
                 print("LOG - ERRO AO CADASTRAR USUARIO: \(err)")
                 usuarioCadastrado = false
             } else {
-                print("LOG - USUARIO CADASTRADO COM SUCESSO: \(ref!.documentID)")
+                print("LOG - USUARIO CADASTRADO COM SUCESSO:")
                 self.performSegue(withIdentifier: "segueParaLoginUsuario", sender: nil)
             }
         }
-    
         return usuarioCadastrado
     }
     
