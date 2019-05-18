@@ -1,19 +1,19 @@
 import UIKit
 import Firebase
 
-class FiltroTableViewController: UITableViewController {
-
+class FiltrosTableViewController: UITableViewController {
     var listaTiposDescarte = [TipoDescarteModel]()
-    
+
     override func viewDidLoad() {
         CarregarTiposDescarte()
+        
         super.viewDidLoad()
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaTiposDescarte.count
     }
@@ -49,5 +49,4 @@ class FiltroTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
 }
