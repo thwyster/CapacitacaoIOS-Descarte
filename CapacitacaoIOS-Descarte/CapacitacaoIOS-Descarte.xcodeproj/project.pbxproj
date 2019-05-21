@@ -12,6 +12,9 @@
 		572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */; };
 		572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */; };
 		5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731B1AD2261474200B9F034 /* CadastroViewController.swift */; };
+		575E44EC2293724E00562B8F /* ColetorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E44EB2293724E00562B8F /* ColetorViewController.swift */; };
+		575E44EE229376B900562B8F /* ColetorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E44ED229376B900562B8F /* ColetorModel.swift */; };
+		575E44F022937C4000562B8F /* ColetorDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E44EF22937C4000562B8F /* ColetorDetalhesViewController.swift */; };
 		57A8329E227137E30011F5A6 /* CadastroUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8329D227137E30011F5A6 /* CadastroUsuarioViewController.swift */; };
 		57A832A0227137F20011F5A6 /* CadastroColetorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8329F227137F20011F5A6 /* CadastroColetorViewController.swift */; };
 		57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F02255683A00CBF820 /* AppDelegate.swift */; };
@@ -31,6 +34,9 @@
 		572C1FF6225EB97600F43F27 /* FiltroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroTableViewController.swift; sourceTree = "<group>"; };
 		572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetoresTableViewController.swift; sourceTree = "<group>"; };
 		5731B1AD2261474200B9F034 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		575E44EB2293724E00562B8F /* ColetorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetorViewController.swift; sourceTree = "<group>"; };
+		575E44ED229376B900562B8F /* ColetorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetorModel.swift; sourceTree = "<group>"; };
+		575E44EF22937C4000562B8F /* ColetorDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetorDetalhesViewController.swift; sourceTree = "<group>"; };
 		57A8329D227137E30011F5A6 /* CadastroUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroUsuarioViewController.swift; sourceTree = "<group>"; };
 		57A8329F227137F20011F5A6 /* CadastroColetorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroColetorViewController.swift; sourceTree = "<group>"; };
 		57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CapacitacaoIOS-Descarte.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +99,7 @@
 			children = (
 				57D2F4F72255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld */,
 				57106B2022839B8700BA4497 /* TipoDescarteModel.swift */,
+				575E44ED229376B900562B8F /* ColetorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +122,8 @@
 				572C1FF8225EB98D00F43F27 /* ColetoresTableViewController.swift */,
 				57A8329D227137E30011F5A6 /* CadastroUsuarioViewController.swift */,
 				57A8329F227137F20011F5A6 /* CadastroColetorViewController.swift */,
+				575E44EB2293724E00562B8F /* ColetorViewController.swift */,
+				575E44EF22937C4000562B8F /* ColetorDetalhesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */,
+				575E44EC2293724E00562B8F /* ColetorViewController.swift in Sources */,
 				5731B1AE2261474200B9F034 /* CadastroViewController.swift in Sources */,
 				572C1FF7225EB97600F43F27 /* FiltroTableViewController.swift in Sources */,
 				57106B2122839B8700BA4497 /* TipoDescarteModel.swift in Sources */,
@@ -265,7 +275,9 @@
 				57D2F4F92255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld in Sources */,
 				57A8329E227137E30011F5A6 /* CadastroUsuarioViewController.swift in Sources */,
 				572C1FF9225EB98D00F43F27 /* ColetoresTableViewController.swift in Sources */,
+				575E44EE229376B900562B8F /* ColetorModel.swift in Sources */,
 				57A832A0227137F20011F5A6 /* CadastroColetorViewController.swift in Sources */,
+				575E44F022937C4000562B8F /* ColetorDetalhesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -89,12 +89,13 @@ class CadastroColetorViewController: UIViewController, UITableViewDelegate, UITa
         let db = Firestore.firestore()
         var usuarioCadastrado = true;
     
-        db.collection("coletor").document((Auth.auth().currentUser?.uid)!).setData([
+        db.collection("usuario").document((Auth.auth().currentUser?.uid)!).setData([
             "Nome": txtNome.text!,
             "CPFCNPJ": txtCPFCNPJ.text!,
             "CEP": txtCEP.text!,
             "Telefone": txtTelefone.text!,
-            "ListaTiposDescarte": VinculaListaTiposDescarteAoColetor()
+            "ListaTiposDescarte": VinculaListaTiposDescarteAoColetor(),
+            "TiposUsuario": "7IysAwgkSF4WC1F39I2y"
         ]) { err in
             if let err = err {
                 print("LOG - ERRO AO CADASTRAR COLETOR: \(err)")

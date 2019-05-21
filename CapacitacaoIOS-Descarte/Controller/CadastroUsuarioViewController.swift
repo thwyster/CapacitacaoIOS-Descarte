@@ -71,11 +71,12 @@ class CadastroUsuarioViewController: UIViewController {
         let db = Firestore.firestore()
         var usuarioCadastrado = true;
         
-        db.collection("cities").document((Auth.auth().currentUser?.uid)!).setData([
+        db.collection("usuario").document((Auth.auth().currentUser?.uid)!).setData([
             "Nome": txtNome.text!,
             "CPF": txtCPF.text!,
             "CEP": txtCEP.text!,
-            "idUsuario": Auth.auth().currentUser?.uid as Any
+            "idUsuario": Auth.auth().currentUser?.uid as Any,
+            "tiposUsuario": "9ceRJCZKur3TLr9mGqmW"
         ]){ err in
             if let err = err {
                 print("LOG - ERRO AO CADASTRAR USUARIO: \(err)")
