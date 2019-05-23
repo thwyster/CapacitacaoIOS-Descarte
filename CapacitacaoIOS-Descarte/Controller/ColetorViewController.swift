@@ -14,7 +14,8 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var listaColetores = [ColetorModel]()
     var itemColetor = ColetorModel()
-    var idColetor : String = ""
+    var coletor = ColetorModel()
+    var filtrosAtivos = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("CLICOU NA CELL \(indexPath.row)")
-        idColetor = listaColetores[indexPath.row].idColetor
+        coletor = listaColetores[indexPath.row]
         self.performSegue(withIdentifier: "segueParaColetorDetalhes", sender: nil)
     }
     
@@ -50,6 +51,7 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         db.collection("usuario")
         .whereField("TiposUsuario", isEqualTo: "7IysAwgkSF4WC1F39I2y")
+        .whereField("ListaTiposDescarte", arrayContains: "2ofT9qSPOGxNf0a3tCUX")
         .getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("LOG - ERRO AO CARREGAR COLETORES: \(err)")
@@ -64,6 +66,7 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.itemColetor.Telefone = document.data()["Telefone"] as! String
                     self.itemColetor.TiposUsuario = document.data()["TiposUsuario"] as! String
                     self.itemColetor.CEP = document.data()["CEP"] as! String
+                    self.itemColetor.ListaTiposDescarte = document.data()["ListaTiposDescarte"] as! [String]
                     
                     self.listaColetores.append(self.itemColetor)
                     
@@ -81,11 +84,10 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
         print("PASSEI AQUI")
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueParaColetorDetalhes") {
             let secondViewController = segue.destination as! ColetorDetalhesViewController
-            let idColetor = sender as! String
-            secondViewController.idColetor = idColetor
+            secondViewController.coletor = coletor
         }
     }
     

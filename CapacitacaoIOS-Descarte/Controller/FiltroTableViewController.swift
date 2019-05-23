@@ -6,6 +6,7 @@ class FiltroTableViewController: UITableViewController {
 
     
     var listaTiposDescarte = [TipoDescarteModel]()
+    var filtrosAtivos = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,30 +62,36 @@ class FiltroTableViewController: UITableViewController {
     }
     
     func VinculaListaTiposDescarteAoFiltro() -> [String]{
-        //Seleciona as linhas selecioinadas da Tableview
         let lista = tableView.indexPathsForSelectedRows
-        var listaIds : [String] = []
+        filtrosAtivos = [String]()
         
         if(lista != nil)
         {
             for l in lista! {
-                listaIds.append(listaTiposDescarte[l.row].idTipoDescarte)
+                filtrosAtivos.append(listaTiposDescarte[l.row].idTipoDescarte)
             }
         }
         else{
             print("LOG - ERRO NENHUM FILTRO FOI SELECIONADO")
         }
 
-        return listaIds
+        return filtrosAtivos
     }
 
     @IBAction func btnFiltrar(_ sender: Any) {
-        var listaIds = VinculaListaTiposDescarteAoFiltro()
+        let listaIds = VinculaListaTiposDescarteAoFiltro()
         print(listaIds.count)
         
         if  listaIds.count > 0
         {
             self.performSegue(withIdentifier: "segueParaColetores", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueParaColetores") {
+            let secondViewController = segue.destination as! ColetorViewController
+            secondViewController.filtrosAtivos = filtrosAtivos
         }
     }
 }

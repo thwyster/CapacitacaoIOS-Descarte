@@ -156,6 +156,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Cop-gu-TK9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
@@ -272,20 +273,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telefone: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTU-xU-gNu">
-                                <rect key="frame" x="16" y="175" width="75" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="41 98888-8888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9l-R2-rp2">
-                                <rect key="frame" x="88" y="175" width="271" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NPJ-4a-Hdp">
                                 <rect key="frame" x="36" y="263" width="343" height="412"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,6 +282,12 @@
                         <viewLayoutGuide key="safeArea" id="ll1-eZ-ahh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dados" id="P3X-s4-sdo"/>
+                    <connections>
+                        <outlet property="lblNomeColetor" destination="Cbp-nc-5uH" id="uCj-q7-bpY"/>
+                        <outlet property="lblRegiao" destination="d1J-nt-pVr" id="Dh9-FI-pnH"/>
+                        <outlet property="lblTelefone" destination="UjT-Sd-2yL" id="Lls-Gu-RrN"/>
+                        <outlet property="lblTiposDescarte" destination="yvO-ua-dcc" id="RUI-0T-6Tp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZa-pv-hUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
