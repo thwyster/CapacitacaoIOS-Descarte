@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CapacitacaoIOS-Descarte.xcodeproj">
+      location = "group:/Users/aluno/Documents/GIT/Ronny/CapacitacaoIOS-Descarte/CapacitacaoIOS-Descarte/Descarte.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

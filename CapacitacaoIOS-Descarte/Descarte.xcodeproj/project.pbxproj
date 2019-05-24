@@ -17,11 +17,11 @@
 		575E44F022937C4000562B8F /* ColetorDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E44EF22937C4000562B8F /* ColetorDetalhesViewController.swift */; };
 		57A8329E227137E30011F5A6 /* CadastroUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8329D227137E30011F5A6 /* CadastroUsuarioViewController.swift */; };
 		57A832A0227137F20011F5A6 /* CadastroColetorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8329F227137F20011F5A6 /* CadastroColetorViewController.swift */; };
+		57AB3F0F2298B67D0006C197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AB3F0E2298B67D0006C197 /* Assets.xcassets */; };
 		57D2F4F12255683A00CBF820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F02255683A00CBF820 /* AppDelegate.swift */; };
 		57D2F4F32255683A00CBF820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F22255683A00CBF820 /* ViewController.swift */; };
 		57D2F4F62255683A00CBF820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4F42255683A00CBF820 /* Main.storyboard */; };
 		57D2F4F92255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57D2F4F72255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodeld */; };
-		57D2F4FB2255683C00CBF820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4FA2255683C00CBF820 /* Assets.xcassets */; };
 		57D2F4FE2255683C00CBF820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D2F4FC2255683C00CBF820 /* LaunchScreen.storyboard */; };
 		BC9E3FB2D4638657ECE7B44C /* libPods-CapacitacaoIOS-Descarte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E97704CEA7483AE7478256F /* libPods-CapacitacaoIOS-Descarte.a */; };
 /* End PBXBuildFile section */
@@ -39,12 +39,12 @@
 		575E44EF22937C4000562B8F /* ColetorDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColetorDetalhesViewController.swift; sourceTree = "<group>"; };
 		57A8329D227137E30011F5A6 /* CadastroUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroUsuarioViewController.swift; sourceTree = "<group>"; };
 		57A8329F227137F20011F5A6 /* CadastroColetorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroColetorViewController.swift; sourceTree = "<group>"; };
-		57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CapacitacaoIOS-Descarte.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57AB3F0E2298B67D0006C197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		57D2F4ED2255683A00CBF820 /* Descarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Descarte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D2F4F02255683A00CBF820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D2F4F22255683A00CBF820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57D2F4F52255683A00CBF820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D2F4F82255683A00CBF820 /* CapacitacaoIOS_Descarte.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapacitacaoIOS_Descarte.xcdatamodel; sourceTree = "<group>"; };
-		57D2F4FA2255683C00CBF820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D2F4FD2255683C00CBF820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D2F4FF2255683C00CBF820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F371FB2C2A303E0F65488A6 /* Pods-CapacitacaoIOS-Descarte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapacitacaoIOS-Descarte.debug.xcconfig"; path = "Target Support Files/Pods-CapacitacaoIOS-Descarte/Pods-CapacitacaoIOS-Descarte.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		57D2F4EE2255683A00CBF820 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */,
+				57D2F4ED2255683A00CBF820 /* Descarte.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 		57D2F4EF2255683A00CBF820 /* CapacitacaoIOS-Descarte */ = {
 			isa = PBXGroup;
 			children = (
-				57D2F4FA2255683C00CBF820 /* Assets.xcassets */,
+				57AB3F0E2298B67D0006C197 /* Assets.xcassets */,
 				571920CA22655AA4000832A8 /* GoogleService-Info.plist */,
 				57D2F4F02255683A00CBF820 /* AppDelegate.swift */,
 				57D2F4FF2255683C00CBF820 /* Info.plist */,
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57D2F4EC2255683A00CBF820 /* CapacitacaoIOS-Descarte */ = {
+		57D2F4EC2255683A00CBF820 /* Descarte */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57D2F5022255683C00CBF820 /* Build configuration list for PBXNativeTarget "CapacitacaoIOS-Descarte" */;
+			buildConfigurationList = 57D2F5022255683C00CBF820 /* Build configuration list for PBXNativeTarget "Descarte" */;
 			buildPhases = (
 				5BEBA7E634AF467927E6F186 /* [CP] Check Pods Manifest.lock */,
 				57D2F4E92255683A00CBF820 /* Sources */,
@@ -162,9 +162,9 @@
 			);
 			dependencies = (
 			);
-			name = "CapacitacaoIOS-Descarte";
+			name = Descarte;
 			productName = "CapacitacaoIOS-Descarte";
-			productReference = 57D2F4ED2255683A00CBF820 /* CapacitacaoIOS-Descarte.app */;
+			productReference = 57D2F4ED2255683A00CBF820 /* Descarte.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57D2F4E82255683A00CBF820 /* Build configuration list for PBXProject "CapacitacaoIOS-Descarte" */;
+			buildConfigurationList = 57D2F4E82255683A00CBF820 /* Build configuration list for PBXProject "Descarte" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57D2F4EC2255683A00CBF820 /* CapacitacaoIOS-Descarte */,
+				57D2F4EC2255683A00CBF820 /* Descarte */,
 			);
 		};
 /* End PBXProject section */
@@ -207,7 +207,7 @@
 			files = (
 				57D2F4FE2255683C00CBF820 /* LaunchScreen.storyboard in Resources */,
 				571920CB22655AA5000832A8 /* GoogleService-Info.plist in Resources */,
-				57D2F4FB2255683C00CBF820 /* Assets.xcassets in Resources */,
+				57AB3F0F2298B67D0006C197 /* Assets.xcassets in Resources */,
 				57D2F4F62255683A00CBF820 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57D2F4E82255683A00CBF820 /* Build configuration list for PBXProject "CapacitacaoIOS-Descarte" */ = {
+		57D2F4E82255683A00CBF820 /* Build configuration list for PBXProject "Descarte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57D2F5002255683C00CBF820 /* Debug */,
@@ -467,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57D2F5022255683C00CBF820 /* Build configuration list for PBXNativeTarget "CapacitacaoIOS-Descarte" */ = {
+		57D2F5022255683C00CBF820 /* Build configuration list for PBXNativeTarget "Descarte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57D2F5032255683C00CBF820 /* Debug */,

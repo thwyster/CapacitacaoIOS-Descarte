@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="U39-hg-l2o"/>
@@ -81,7 +81,7 @@
         <!--Cadastro-->
         <scene sceneID="ZE8-cL-ChP">
             <objects>
-                <viewController id="r55-bm-qkW" customClass="CadastroViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r55-bm-qkW" customClass="CadastroViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m6d-99-kcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
         <!--Filtros-->
         <scene sceneID="A4b-X9-Jsf">
             <objects>
-                <tableViewController id="zJ4-KP-mA5" customClass="FiltroTableViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zJ4-KP-mA5" customClass="FiltroTableViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6wa-8u-soP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +170,7 @@
         <!--Coletores-->
         <scene sceneID="fIf-Dc-bqA">
             <objects>
-                <viewController id="Oke-NL-cAx" customClass="ColetorViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Oke-NL-cAx" customClass="ColetorViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIj-LX-3V8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--Dados Coletor-->
         <scene sceneID="NAn-om-zDa">
             <objects>
-                <viewController title="Dados Coletor" id="gAB-9p-kvY" customClass="ColetorDetalhesViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dados Coletor" id="gAB-9p-kvY" customClass="ColetorDetalhesViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5If-LR-svW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,7 @@
         <!--Cadastro Coletor-->
         <scene sceneID="8lj-LK-hRc">
             <objects>
-                <viewController storyboardIdentifier="CadastroColetorViewController" title="Cadastro Coletor" id="itV-OL-HFx" customClass="CadastroColetorViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CadastroColetorViewController" title="Cadastro Coletor" id="itV-OL-HFx" customClass="CadastroColetorViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2Z-gq-2lT">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="590"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +454,7 @@
         <!--Cadastro Usuario-->
         <scene sceneID="nMv-5L-K9W">
             <objects>
-                <viewController storyboardIdentifier="CadastroUsuarioViewController" title="Cadastro Usuario" id="ou5-49-unB" customClass="CadastroUsuarioViewController" customModule="CapacitacaoIOS_Descarte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CadastroUsuarioViewController" title="Cadastro Usuario" id="ou5-49-unB" customClass="CadastroUsuarioViewController" customModule="Descarte" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWj-tr-IqO">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="590"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

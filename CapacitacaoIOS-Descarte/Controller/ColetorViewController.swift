@@ -13,14 +13,14 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableview: UITableView!
     
     var listaColetores = [ColetorModel]()
-    var itemColetor = ColetorModel()
+    var listaColetoresFiltrados = [ColetorModel]()
+
     var coletor = ColetorModel()
     var filtrosAtivos = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CarregarColetoresPorFiltro()
-
+        CarregarColetores()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,12 +28,12 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.listaColetores.count
+        return self.listaColetoresFiltrados.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemColetor", for: indexPath)
-        let item = self.listaColetores[indexPath.row]
+        let item = self.listaColetoresFiltrados[indexPath.row]
         
         cell.textLabel?.text = item.Nome
         
@@ -42,36 +42,38 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("CLICOU NA CELL \(indexPath.row)")
-        coletor = listaColetores[indexPath.row]
+        coletor = listaColetoresFiltrados[indexPath.row]
         self.performSegue(withIdentifier: "segueParaColetorDetalhes", sender: nil)
     }
     
-    func CarregarColetoresPorFiltro(){
+    func CarregarColetores(){
         let db = Firestore.firestore()
         
         db.collection("usuario")
         .whereField("TiposUsuario", isEqualTo: "7IysAwgkSF4WC1F39I2y")
-        .whereField("ListaTiposDescarte", arrayContains: "2ofT9qSPOGxNf0a3tCUX")
+        //.whereField("ListaTiposDescarte", arrayContains: "2ofT9qSPOGxNf0a3tCUX")
         .getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("LOG - ERRO AO CARREGAR COLETORES: \(err)")
             } else {
                 for document in querySnapshot!.documents {
+                    var itemColetor = ColetorModel()
+                    
                     print("DEU BOA")
                     print("\(document.documentID) => \(document.data())")
                     
-                    self.itemColetor.idColetor = document.documentID
-                    self.itemColetor.CPFCNPJ = document.data()["CPFCNPJ"] as! String
-                    self.itemColetor.Nome = document.data()["Nome"] as! String
-                    self.itemColetor.Telefone = document.data()["Telefone"] as! String
-                    self.itemColetor.TiposUsuario = document.data()["TiposUsuario"] as! String
-                    self.itemColetor.CEP = document.data()["CEP"] as! String
-                    self.itemColetor.ListaTiposDescarte = document.data()["ListaTiposDescarte"] as! [String]
+                    itemColetor.idColetor = document.documentID
+                    itemColetor.CPFCNPJ = document.data()["CPFCNPJ"] as! String
+                    itemColetor.Nome = document.data()["Nome"] as! String
+                    itemColetor.Telefone = document.data()["Telefone"] as! String
+                    itemColetor.TiposUsuario = document.data()["TiposUsuario"] as! String
+                    itemColetor.CEP = document.data()["CEP"] as! String
+                    itemColetor.ListaTiposDescarte = document.data()["ListaTiposDescarte"] as! [String]
                     
-                    self.listaColetores.append(self.itemColetor)
-                    
-                    print("QTD COLETORES -> \(self.listaColetores.count)")
+                    self.listaColetores.append(itemColetor)
                 }
+                
+                self.FiltrarColetores(self.filtrosAtivos)
             }
             
             self.tableview.dataSource = self.listaColetores as? UITableViewDataSource
@@ -82,6 +84,21 @@ class ColetorViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         print("PASSEI AQUI")
+    }
+    
+    func FiltrarColetores(_ filtrosAtivos : [String]){
+        for coletor in self.listaColetores {
+            var possuiTodosFiltros : Bool = true
+            
+            for filtro in self.filtrosAtivos {
+                if (!coletor.ListaTiposDescarte.contains(filtro)){
+                    possuiTodosFiltros = false
+                }
+            }
+            if (possuiTodosFiltros){
+                listaColetoresFiltrados.append(coletor)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
